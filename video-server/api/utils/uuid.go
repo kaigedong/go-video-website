@@ -1,5 +1,11 @@
 package utils
 
+import (
+	"crypto/rand"
+	"fmt"
+	"io"
+)
+
 func NewUUID() (string, error) {
 	uuid := make([]byte, 16)
 	n, err := io.ReadFull(rand.Reader, uuid)

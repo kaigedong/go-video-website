@@ -1,7 +1,10 @@
 package dbops
 
 import (
+	"fmt"
+	"strconv"
 	"testing"
+	"time"
 )
 
 // init(dblogin, truncate tables) -> run tests ->clear data(truncate tables)
