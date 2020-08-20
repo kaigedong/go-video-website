@@ -6,8 +6,8 @@ import (
 	"time"
 
 	_ "github.com/go-sql-driver/mysql"
-	"github.com/go-video-website/defs"
-	"github.com/go-video-website/utils"
+	"github.com/go-video-website/api/defs"
+	"github.com/go-video-website/api/utils"
 )
 
 func AddUserCredential(loginName string, pwd string) error {
