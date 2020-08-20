@@ -29,7 +29,7 @@ CREATE TABLE video_server.comments (
 	id varchar(64) PRIMARY KEY NOT NULL,
 	video_id varchar(64) NULL,
 	author_id INT UNSIGNED NULL,
-	context TEXT NULL,
+	content TEXT NULL,
 	`time` DATETIME NULL
 )
 ENGINE=InnoDB
