@@ -1,4 +1,4 @@
-module webserver
+module github.com/kaigedong/go-video-website
 
 go 1.13
 
