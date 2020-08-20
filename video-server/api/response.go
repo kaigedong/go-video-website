@@ -1,7 +1,8 @@
 package main
 
+// 处理返回消息
+
 import (
-	"io"
 	"net/http"
 )
 
