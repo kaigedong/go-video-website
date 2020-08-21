@@ -3,11 +3,12 @@ package main
 import (
 	"net/http"
 
+	"github.com/go-video-website/api/defs"
 	"github.com/go-video-website/api/session"
 )
 
 var HEADER_FAILED_SESSION = "X-Session-Id" // X开头是自定义的Header
-var HEADER_FIELED_UNAME = "X-User-Name"
+var HEADER_FIELD_UNAME = "X-User-Name"
 
 func validateUserSession(r *http.Request) bool {
 	sid := r.Header.Get(HEADER_FAILED_SESSION)
@@ -18,15 +19,16 @@ func validateUserSession(r *http.Request) bool {
 	if ok {
 		return false
 	}
-	r.Header.Add(HEADER_FIELED_UNAME, uname)
+	r.Header.Add(HEADER_FIELD_UNAME, uname)
 	return true
 }
 
 func ValidateUser(w http.ResponseWriter, r *http.Request) bool {
-	uname := r.Header.Get(HEADER_FIELED_UNAME)
+	uname := r.Header.Get(HEADER_FIELD_UNAME)
 	if len(uname) == 0 {
-		sendErrorResponse()
+		sendErrorResponse(w, defs.ErrorNotAuthUser)
 		return false
 	}
+
 	return true
 }
